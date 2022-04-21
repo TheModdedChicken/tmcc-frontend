@@ -1,0 +1,20 @@
+button {
+  position: relative;
+  background-color: #DFE4EA;
+  font-family: Inter;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #ebf0f7;
+}
+
+button:active {
+  background-color: #cacfd6;
+}

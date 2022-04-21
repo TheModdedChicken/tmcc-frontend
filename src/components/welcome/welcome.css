@@ -1,0 +1,32 @@
+#welcomeText {
+  position: relative;
+  font-size: 80%;
+  font-weight: 600;
+
+  margin: 10vmin 0 0 0;
+
+  display: inline-block;
+}
+
+#welcomeTextName {
+  position: relative;
+  font-size: 100%;
+  font-weight: 600;
+
+  margin: 0;
+}
+
+#username-textbox {
+  position: relative;
+  top: 3.5vmin;
+}
+
+#room-textbox {
+  position: relative;
+  top: 5.5vmin;
+}
+
+#welcome-button {
+  position: relative;
+  top: 8.5vmin;
+}
