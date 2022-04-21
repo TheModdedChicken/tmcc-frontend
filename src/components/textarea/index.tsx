@@ -27,9 +27,9 @@ function TextArea(props: {
         rows={props.rows}
         maxLength={props.maxLength} 
         minLength={props.minLength} 
-        placeholder={props.placeholder || ""} 
+        placeholder={props.placeholder} 
         onChange={(data) => { if (props.onChange) props.onChange(data) }}
-        onKeyDown={(data) => { if (data.key === "Enter") {if (props.onSubmit) props.onSubmit(data); if (props.clearOnSubmit) data.currentTarget.value = "";} }}
+        onKeyDown={(data) => { if (data.key === "Enter") {if (props.onSubmit) props.onSubmit(data); if (props.clearOnSubmit) data.currentTarget.value = '';} }}
       ></textarea>
     </div>
   );

@@ -11,6 +11,7 @@ h4 {
   font-weight: 600;
   text-align: left;
   left: 2vmin;
+  bottom: 0.3vmin;
   margin: 0;
   float: left;
 }
@@ -21,8 +22,8 @@ h5 {
   font-size: 40%;
   color: #8b8b8b;
   text-align: left;
-  left: 2.5vmin;
-  top: 0.6vmin;
+  left: 2vmin;
+  top: 2px;
   margin: 0;
 }
 

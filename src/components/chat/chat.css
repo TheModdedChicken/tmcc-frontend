@@ -48,8 +48,7 @@
 
 .chat-message p {
   position: relative;
-  left: 30px;
-  top: 0.3vmin;
+  left: 25px;
   word-wrap: break-word;
 }
 
