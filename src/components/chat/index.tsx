@@ -22,7 +22,7 @@ function Chat(props: {username: string, userCount: number, messages: ChatMessage
     </li>)
   }
 
-  setInterval(() => {
+  setTimeout(() => {
     const element = document.getElementById("chatbox");
     if (!element) return;
     console.log(isScrolling)
