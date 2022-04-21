@@ -59,7 +59,10 @@ function Chat(props: {username: string, userCount: number, messages: ChatMessage
         </ul>
       </div>
       <div>
-        <TextArea id="chat-textbox" name={props.username} rows={200} placeholder="Say something..." clearOnSubmit={true} onSubmit={(e) => props.createMessage(e.currentTarget.value)}></TextArea>
+        <TextArea id="chat-textbox" name={props.username} rows={200} placeholder="Say something..." clearOnSubmit={true} onSubmit={(e) => { 
+          const value = e.currentTarget.value.trimStart(); 
+          if (value !== "") props.createMessage(value);
+        }}></TextArea>
       </div>
     </>
   );
