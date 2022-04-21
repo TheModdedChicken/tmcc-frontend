@@ -42,7 +42,7 @@ function Chat(props: {username: string, messages: ChatMessage[], createMessage: 
         </ul>
       </div>
       <div>
-        <TextBox id="chat-textbox" name={props.username} clearOnSubmit={true} onSubmit={(e) => props.createMessage(e.currentTarget.value)}></TextBox>
+        <TextBox id="chat-textbox" name={props.username} placeholder="Say something..." clearOnSubmit={true} onSubmit={(e) => props.createMessage(e.currentTarget.value)}></TextBox>
       </div>
     </>
   );
