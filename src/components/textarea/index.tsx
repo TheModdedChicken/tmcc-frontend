@@ -1,8 +1,8 @@
 //import React, { useState } from 'react';
 import React from 'react';
-import './textbox.css';
+import './textarea.css';
 
-function TextBox(props: { 
+function TextArea(props: { 
   id: string, 
   name: string, 
   infoText?: string, 
@@ -10,8 +10,10 @@ function TextBox(props: {
   maxLength?: number, 
   minLength?: number,
   clearOnSubmit?: boolean,
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
-  onSubmit?: (event: React.FormEvent<HTMLInputElement>) => void 
+  cols?: number,
+  rows?: number,
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+  onSubmit?: (event: React.FormEvent<HTMLTextAreaElement>) => void 
 }) {
 
   return (
@@ -20,16 +22,17 @@ function TextBox(props: {
         <h4>{props.name}</h4>
         <h5>{props.infoText}</h5>
       </div>
-      <input className="textbox-input"
-        type={"text"}
+      <textarea className="textarea-input"
+        cols={props.cols}
+        rows={props.rows}
         maxLength={props.maxLength} 
         minLength={props.minLength} 
         placeholder={props.placeholder || ""} 
         onChange={(data) => { if (props.onChange) props.onChange(data) }}
         onKeyDown={(data) => { if (data.key === "Enter") {if (props.onSubmit) props.onSubmit(data); if (props.clearOnSubmit) data.currentTarget.value = "";} }}
-      ></input>
+      ></textarea>
     </div>
   );
 }
 
-export default TextBox;
+export default TextArea;

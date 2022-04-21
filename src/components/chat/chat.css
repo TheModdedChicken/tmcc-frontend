@@ -9,7 +9,7 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   overflow-wrap: normal;
-  max-height: 83%;
+  max-height: 78%;
 }
 
 #chatbox::-webkit-scrollbar {
@@ -18,29 +18,39 @@
 
 #chat-textbox {
   position: relative;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 #chat-textbox h4 {
   font-size: medium;
+  left: 1vmin;
+}
+
+#chat-textbox .textarea-input {
+  resize: none;
+  width: 100%;
+  max-width: 95%;
+
+  height: 6vmin;
 }
 
 #chatscroller {
   list-style-type: none;
   margin: 0;
-  padding: 10px 0 0 0;
+  padding: 5px 0 0 0;
   text-align: left;
 }
 
 .chat-message {
   position: relative;
-  width: 100%;
+  width: 85%;
 }
 
 .chat-message p {
   position: relative;
   left: 30px;
   top: 0.3vmin;
+  word-wrap: break-word;
 }
 
 #chat-contextbox {

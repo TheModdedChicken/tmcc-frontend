@@ -1,0 +1,50 @@
+div {
+  position: relative;
+}
+
+.textboxTagName {
+  overflow: hidden;
+}
+
+h4 {
+  position: relative;
+  font-weight: 600;
+  text-align: left;
+  left: 2vmin;
+  margin: 0;
+  float: left;
+}
+
+h5 {
+  position: relative;
+  font-weight: 600;
+  font-size: 40%;
+  color: #8b8b8b;
+  text-align: left;
+  left: 2.5vmin;
+  top: 0.6vmin;
+  margin: 0;
+}
+
+textarea {
+  position: relative;
+  background-color: #F1F2F6;
+  border: none;
+  outline: none;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 50%;
+
+  word-wrap: break-word;
+
+  padding: 7px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
+}
+
+textarea::placeholder {
+  color: #AFAFAF;
+  font-weight: 700;
+}
+

@@ -9,6 +9,7 @@ const pingSound = require('../../assets/notification.mp3');
 
 import outIcon from '../../assets/out.svg'
 import userIcon from '../../assets/user.svg'
+import TextArea from '../textarea';
 
 function Chat(props: {username: string, userCount: number, messages: ChatMessage[], createMessage: (message: string) => void, setScene: (scene: string) => void}) {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -16,7 +17,7 @@ function Chat(props: {username: string, userCount: number, messages: ChatMessage
   var messageElements: JSX.Element[] = [];
   for (const message of props.messages) {
     messageElements.push(<li className="chat-message">
-      <h4>{message.author}</h4>
+      <h4>{message.author}:</h4>
       <p>{message.message}</p>
     </li>)
   }
@@ -55,7 +56,7 @@ function Chat(props: {username: string, userCount: number, messages: ChatMessage
         </ul>
       </div>
       <div>
-        <TextBox id="chat-textbox" name={props.username} placeholder="Say something..." clearOnSubmit={true} onSubmit={(e) => props.createMessage(e.currentTarget.value)}></TextBox>
+        <TextArea id="chat-textbox" name={props.username} rows={200} placeholder="Say something..." clearOnSubmit={true} onSubmit={(e) => props.createMessage(e.currentTarget.value)}></TextArea>
       </div>
     </>
   );

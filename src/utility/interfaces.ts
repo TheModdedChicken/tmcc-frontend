@@ -14,3 +14,7 @@ export interface ChatMessage {
   author: string
   message: string
 }
+
+export interface IPropControl {
+  setScene?: (scene: string) => void
+}
