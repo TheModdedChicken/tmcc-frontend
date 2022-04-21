@@ -38,6 +38,8 @@ function App() {
         }
         case "new_message": {
           setMessages([...getMessages, data.body])
+          const pingSound: any = document.getElementById('pingSound')
+          if (pingSound) pingSound.play();
           break;
         }
         case "sent_message": {

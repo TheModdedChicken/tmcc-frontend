@@ -4,6 +4,7 @@ import { RoomNameRegex, UsernameRegex } from '../../utility/regex';
 import Button from '../button';
 import TextBox from '../textbox';
 import './chat.css';
+const pingSound = require('../../assets/notification.mp3');
 
 function Chat(props: {username: string, messages: ChatMessage[], createMessage: (message: string) => void}) {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -29,6 +30,9 @@ function Chat(props: {username: string, messages: ChatMessage[], createMessage: 
 
   return (
     <>
+      <audio id="pingSound">
+        <source src={pingSound} type="audio/mp3"/>
+      </audio> 
       <div 
         id="chatbox" 
         onScroll={(e) => setIsScrolling(isUserAtBottom(e.currentTarget))}
