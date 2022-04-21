@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import remarkGemoji from 'remark-gemoji'
+import remarkGfm from 'remark-gfm'
 import React, { useEffect, useRef, useState } from 'react';
 import { ChatMessage } from '../../utility/interfaces';
 import { RoomNameRegex, UsernameRegex } from '../../utility/regex';
@@ -19,7 +21,7 @@ function Chat(props: {username: string, userCount: number, messages: ChatMessage
   for (const message of props.messages) {
     messageElements.push(<li className="chat-message">
       <h4>{message.author}:</h4>
-      <p><ReactMarkdown className="mrkdown">{message.message}</ReactMarkdown></p>
+      <p><ReactMarkdown remarkPlugins={[remarkGfm, remarkGemoji]} className="mrkdown">{message.message}</ReactMarkdown></p>
     </li>)
   }
 
