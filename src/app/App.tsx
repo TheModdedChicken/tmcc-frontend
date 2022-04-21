@@ -15,6 +15,7 @@ function App() {
   const [getScene, setScene] = useState("welcome");
   const [getUsername, setUsername] = useState("");
   const [getRoom, setRoom] = useState("");
+  const [getUserCount, setUserCount] = useState(0);
   const [getID, setID] = useState("");
 
   if (ws) {
@@ -34,6 +35,13 @@ function App() {
         case "successful_connection": {
           setRoom(data.body.room)
           setID(data.body.id)
+
+          setInterval(() => {
+            SendWSMessage(ws, {
+              code: "user_count",
+              body: {}
+            })
+          },10000)
           break;
         }
         case "new_message": {
@@ -50,13 +58,17 @@ function App() {
           setMessages([])
           break;
         }
+        case "user_count": {
+          setUserCount(data.body.users)
+          break;
+        }
       }
     };
   }
 
   var scene;
   if (getScene === "welcome") scene = <Welcome setRoom={setRoom} setUsername={setUsername} connect={() => { SendWSMessage(ws, { code: "change_room", body: { room: getRoom } }); setScene('chat') }}></Welcome>;
-  else if (getID) scene = <Chat messages={getMessages} username={getUsername} createMessage={(msg) => SendWSMessage(ws, { code: "send_message", body: { author: getUsername, message: msg } })}></Chat>
+  else if (getID) scene = <Chat messages={getMessages} userCount={getUserCount} username={getUsername} setScene={setScene} createMessage={(msg) => SendWSMessage(ws, { code: "send_message", body: { author: getUsername, message: msg } })}></Chat>
 
   return (
     <div className="App">

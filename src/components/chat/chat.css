@@ -2,7 +2,7 @@
   position: relative;
   background-color: #F1F2F6;
   width: 100%;
-  height: 83%;
+  height: 78%;
 
   word-wrap: normal;
   overflow-y: scroll;
@@ -40,5 +40,29 @@
 .chat-message p {
   position: relative;
   left: 30px;
-  top: 0.2vmin;
+  top: 0.3vmin;
+}
+
+#chat-contextbox {
+  position: relative;
+  background-color: white;
+  height: 5%;
+}
+
+#chat-contextbox button {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  float: right;
+}
+
+#chat-contextbox div {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

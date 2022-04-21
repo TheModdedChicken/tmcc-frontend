@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef, useState } from 'react';
 import { ChatMessage } from '../../utility/interfaces';
 import { RoomNameRegex, UsernameRegex } from '../../utility/regex';
@@ -6,7 +7,10 @@ import TextBox from '../textbox';
 import './chat.css';
 const pingSound = require('../../assets/notification.mp3');
 
-function Chat(props: {username: string, messages: ChatMessage[], createMessage: (message: string) => void}) {
+import outIcon from '../../assets/out.svg'
+import userIcon from '../../assets/user.svg'
+
+function Chat(props: {username: string, userCount: number, messages: ChatMessage[], createMessage: (message: string) => void, setScene: (scene: string) => void}) {
   const [isScrolling, setIsScrolling] = useState(false);
 
   var messageElements: JSX.Element[] = [];
@@ -17,7 +21,7 @@ function Chat(props: {username: string, messages: ChatMessage[], createMessage: 
     </li>)
   }
 
-  setTimeout(() => {
+  setInterval(() => {
     const element = document.getElementById("chatbox");
     if (!element) return;
     console.log(isScrolling)
@@ -32,7 +36,16 @@ function Chat(props: {username: string, messages: ChatMessage[], createMessage: 
     <>
       <audio id="pingSound">
         <source src={pingSound} type="audio/mp3"/>
-      </audio> 
+      </audio>
+      <div
+        id="chat-contextbox"
+      >
+        <button onClick={() => props.setScene("welcome")}><img src={outIcon} width={"18vmin"} height={"18vmin"}></img></button>
+        <div>
+          <img src={userIcon} width={"16vmin"} height={"16vmin"} style={{margin: '5px'}}></img>
+          <p>{props.userCount}</p>
+        </div>
+      </div>
       <div 
         id="chatbox" 
         onScroll={(e) => setIsScrolling(isUserAtBottom(e.currentTarget))}
