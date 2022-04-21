@@ -48,8 +48,10 @@
 
 .chat-message p {
   position: relative;
-  left: 25px;
   word-wrap: break-word;
+  font-size: 70%;
+  font-weight: 500;
+  left: 12.5px;
 }
 
 #chat-contextbox {
