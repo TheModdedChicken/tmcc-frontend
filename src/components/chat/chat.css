@@ -54,6 +54,11 @@
   left: 12.5px;
 }
 
+.chat-message img {
+  width: 70%;
+  height: 70%;
+}
+
 #chat-contextbox {
   position: relative;
   background-color: white;
